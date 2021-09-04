@@ -1,0 +1,12 @@
+GET http://localhost:5000/user
+###
+POST http://localhost:5000/user
+Content-Type: application/json
+
+{
+    "email":"rakiabodyjm@gmail.com",
+    "first_name":" ",
+    "last_name":" hello", 
+}
+###
+GET http://localhost:5000/user/user-tangina

@@ -2,9 +2,11 @@
   "root": true,
   "parserOptions": {
     "project": "tsconfig.json",
-    "sourceType": "module"
+    "sourceType": "module",
+    "createDefaultProgram": true
   },
   "parser": "@typescript-eslint/parser",
+
   "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
     "eslint:recommended",
@@ -21,5 +23,6 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off"
-  }
+  },
+  "ignorePatterns": ["**/build/*.js"]
 }

@@ -2,12 +2,8 @@ import { IsEmail, IsNotEmpty } from 'class-validator'
 import { model, Schema } from 'mongoose'
 
 export class UserType {
-  @IsNotEmpty()
   first_name: string
-  @IsNotEmpty()
   last_name: string
-  @IsEmail()
-  @IsNotEmpty()
   email: string
 }
 const UserSchema = new Schema<UserType>(
@@ -15,10 +11,12 @@ const UserSchema = new Schema<UserType>(
     first_name: {
       type: String,
       required: true,
+      minLength: 3,
     },
     last_name: {
       type: String,
       required: true,
+      minlength: 3,
     },
     email: {
       index: true,
@@ -32,5 +30,5 @@ const UserSchema = new Schema<UserType>(
   },
 )
 
-const User = model<UserType>('Users', UserSchema)
-export default User
+const Users = model<UserType>('Users', UserSchema)
+export default Users
